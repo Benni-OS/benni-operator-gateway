@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="100%" height="100%">
+  <defs>
+    <linearGradient id="headerGradAzure" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00B0FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7000FF" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="shadowAzure" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#00B0FF" flood-opacity="0.2"/>
+    </filter>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap');
+      .terminal-text {
+        font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+        font-size: 13.5px;
+        line-height: 22px;
+      }
+      .c-dim { fill: #6E7681; }
+      .c-white { fill: #F0F6FC; }
+      .c-azure { fill: #00B0FF; font-weight: 700; }
+      .c-purple { fill: #A855F7; font-weight: 600; }
+      .c-green { fill: #00FF66; font-weight: 600; }
+      .c-red { fill: #FF3366; font-weight: 700; }
+      .c-yellow { fill: #FFBD2E; font-weight: 600; }
+
+      @keyframes cycleAnim {
+        0% { opacity: 0; transform: translateY(4px); }
+        3% { opacity: 1; transform: translateY(0); }
+        92% { opacity: 1; transform: translateY(0); }
+        98% { opacity: 0; transform: translateY(-2px); }
+        100% { opacity: 0; }
+      }
+
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      .cursor {
+        animation: blink 1s infinite;
+        fill: #00B0FF;
+      }
+
+      .anim-l0 { animation: cycleAnim 13s ease infinite; animation-delay: 0.1s; }
+      .anim-l1 { animation: cycleAnim 13s ease infinite; animation-delay: 1.0s; }
+      .anim-l2 { animation: cycleAnim 13s ease infinite; animation-delay: 2.1s; }
+      .anim-l3 { animation: cycleAnim 13s ease infinite; animation-delay: 3.2s; }
+      .anim-l4 { animation: cycleAnim 13s ease infinite; animation-delay: 4.4s; }
+      .anim-l5 { animation: cycleAnim 13s ease infinite; animation-delay: 5.5s; }
+      .anim-l6 { animation: cycleAnim 13s ease infinite; animation-delay: 6.7s; }
+      .anim-l7 { animation: cycleAnim 13s ease infinite; animation-delay: 7.8s; }
+      .anim-l8 { animation: cycleAnim 13s ease infinite; animation-delay: 8.9s; }
+      .anim-l9 { animation: cycleAnim 13s ease infinite; animation-delay: 10.0s; }
+    </style>
+  </defs>
+
+  <!-- Terminal Window Outer Frame -->
+  <rect x="10" y="10" width="860" height="450" rx="12" ry="12" fill="#080C14" stroke="#00B0FF" stroke-width="1.5" stroke-opacity="0.5" filter="url(#shadowAzure)"/>
+
+  <!-- Titlebar -->
+  <path d="M 10 22 C 10 15.37 15.37 10 22 10 L 858 10 C 864.63 10 870 15.37 870 22 L 870 46 L 10 46 Z" fill="#0E1624"/>
+  <line x1="10" y1="46" x2="870" y2="46" stroke="#1C2D47" stroke-width="1"/>
+
+  <!-- Window Controls -->
+  <circle cx="32" cy="28" r="6" fill="#FF5F56"/>
+  <circle cx="52" cy="28" r="6" fill="#FFBD2E"/>
+  <circle cx="72" cy="28" r="6" fill="#27C93F"/>
+
+  <!-- Title text -->
+  <text x="440" y="32" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8B949E" font-weight="500">
+    benni-operator-gateway — MCP gateway &amp; approval gate — 860x450
+  </text>
+
+  <!-- Terminal Content -->
+  <g class="terminal-text" transform="translate(30, 80)">
+    
+    <!-- Line 0: Command Invocation -->
+    <g class="anim-l0">
+      <text x="0" y="0">
+        <tspan class="c-azure">❯ </tspan>
+        <tspan class="c-purple">benni-operator-gateway</tspan>
+        <tspan class="c-white"> serve </tspan>
+        <tspan class="c-dim">--port 3000 --approval-gate strict --mcp-http</tspan>
+      </text>
+    </g>
+
+    <!-- Line 1: Header banner -->
+    <g class="anim-l1" transform="translate(0, 28)">
+      <text x="0" y="0">
+        <tspan class="c-dim">[GATEWAY]</tspan>
+        <tspan class="c-azure"> Benni Operator Gateway v2.4.0 Active</tspan>
+        <tspan class="c-dim"> — Listening on 0.0.0.0:3000</tspan>
+      </text>
+    </g>
+
+    <!-- Line 2: Hot reload connectors -->
+    <g class="anim-l2" transform="translate(0, 56)">
+      <text x="0" y="0">
+        <tspan class="c-azure">● CONNECTOR REGISTRY:</tspan>
+        <tspan class="c-green"> 18 MCP tools hot-loaded </tspan>
+        <tspan class="c-dim">(GitHub, Slack, Vercel, Supabase, Puter)</tspan>
+      </text>
+    </g>
+
+    <!-- Line 3: Incoming tool call from agent -->
+    <g class="anim-l3" transform="translate(0, 80)">
+      <text x="0" y="0">
+        <tspan class="c-dim">[DISPATCH] Client </tspan><tspan class="c-white">Claude-Desktop-01</tspan>
+        <tspan class="c-dim"> called tool: </tspan>
+        <tspan class="c-yellow">production_database_migrate()</tspan>
+      </text>
+    </g>
+
+    <!-- Line 4: Approval gate intercepted -->
+    <g class="anim-l4" transform="translate(0, 114)">
+      <text x="0" y="0">
+        <tspan class="c-red">● APPROVAL GATE:</tspan>
+        <tspan class="c-yellow"> SENSITIVE ACTION PAUSED</tspan>
+        <tspan class="c-dim"> [Risk: </tspan><tspan class="c-red">EXTERNAL_MUTATION</tspan><tspan class="c-dim">]</tspan>
+      </text>
+    </g>
+
+    <!-- Line 5: Prompting operator -->
+    <g class="anim-l5" transform="translate(0, 138)">
+      <text x="0" y="0">
+        <tspan class="c-white">  Operator clearance requested:</tspan>
+        <tspan class="c-azure"> Approve production migration? </tspan>
+        <tspan class="c-green">[APPROVED via CLI Token]</tspan>
+      </text>
+    </g>
+
+    <!-- Line 6: Execution resumed -->
+    <g class="anim-l6" transform="translate(0, 172)">
+      <text x="0" y="0">
+        <tspan class="c-green">✔ EXECUTION RESUMED:</tspan>
+        <tspan class="c-white"> Migration script applied cleanly in 0.44s</tspan>
+      </text>
+    </g>
+
+    <!-- Line 7: Decision ledger record -->
+    <g class="anim-l7" transform="translate(0, 196)">
+      <text x="0" y="0">
+        <tspan class="c-dim">[DECISION LEDGER] Append-only audit record minted: </tspan>
+        <tspan class="c-azure">sha256:4a8c91f0...</tspan>
+      </text>
+    </g>
+
+    <!-- Line 8: Verdict -->
+    <g class="anim-l8" transform="translate(0, 230)">
+      <text x="0" y="0">
+        <tspan class="c-white">Safety Verdict: </tspan>
+        <tspan class="c-green">AUDITED &amp; GOVERNED</tspan>
+        <tspan class="c-dim"> | Rubber-stamping eliminated | Zero vendor lock-in</tspan>
+      </text>
+    </g>
+
+    <!-- Line 9: Ready prompt -->
+    <g class="anim-l9" transform="translate(0, 260)">
+      <text x="0" y="0">
+        <tspan class="c-azure">❯ </tspan>
+        <tspan class="c-dim">Gateway active. Ready for multi-agent routing.</tspan>
+        <tspan class="cursor"> █</tspan>
+      </text>
+    </g>
+
+  </g>
+
+  <!-- Bottom Accent Stripe -->
+  <rect x="10" y="457" width="860" height="3" fill="url(#headerGradAzure)" rx="1.5"/>
+</svg>
