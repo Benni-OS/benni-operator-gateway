@@ -54,3 +54,8 @@ benni.db*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+.qwen/
+.qwenignore
+QWEN.md
+

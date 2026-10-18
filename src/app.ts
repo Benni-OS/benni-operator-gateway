@@ -28,6 +28,7 @@ app.route('/health', healthRouter);
 app.route('/jules', julesRouter);
 app.route('/jobs', jobsRouter);
 app.route('/capabilities', capabilitiesRouter);
+app.route('/connectors', capabilitiesRouter);
 
 app.onError((err, c) => {
   const reqId = c.get('requestId');
