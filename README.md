@@ -23,7 +23,7 @@
 
 <br/>
 
-<img src="assets/demo.svg" alt="Benni Operator Gateway Terminal Demo" width="100%"/>
+<img src="assets/demo.gif" alt="Benni Operator Gateway Terminal Demo" width="100%"/>
 
 <br/>
 
